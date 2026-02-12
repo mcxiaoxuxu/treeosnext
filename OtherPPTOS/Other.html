@@ -6,7 +6,7 @@
     <title>PPTOS推荐</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* ===== 深蓝科技 · 毛玻璃网格（完全继承，但整体更简洁） ===== */
+        /* ===== 深蓝科技 · 毛玻璃网格 ===== */
         * {
             margin: 0;
             padding: 0;
@@ -169,7 +169,7 @@
             color: white;
         }
 
-        /* 空状态提示（用于后续添加）—— 极简虚线框 */
+        /* 空状态提示 — 极简虚线框 */
         .empty-card {
             background: rgba(10, 25, 45, 0.3);
             backdrop-filter: blur(8px);
@@ -189,7 +189,7 @@
             opacity: 0.6;
         }
 
-        /* ===== 页脚（完全保留署名风格） ===== */
+        /* ===== 页脚 ===== */
         footer {
             text-align: center;
             padding: 20px 0 10px;
@@ -252,9 +252,9 @@
             <div class="site-sub">SELECT YOUR PPT OS</div>
         </header>
 
-        <!-- 卡片网格：目前仅waveOS 3，其余为预留空位 -->
+        <!-- 卡片网格：WaveOS 3 + AquaOS 1.0 + 预留空位 -->
         <div class="os-grid fade-in">
-            <!-- WaveOS 3 卡片：小框 + 小按钮 -->
+            <!-- WaveOS 3 卡片 -->
             <div class="os-card">
                 <div class="os-name">
                     <i class="fas fa-water"></i> waveOS
@@ -267,20 +267,28 @@
                 </a>
             </div>
 
-            <!-- 预留空卡片：后续可添加更多PPTOS -->
+            <!-- AquaOS 1.0 卡片（新增） -->
+            <div class="os-card">
+                <div class="os-name">
+                    <i class="fas fa-droplet"></i> AquaOS
+                </div>
+                <div class="os-version">
+                    <i class="fas fa-tag"></i> 1.0
+                </div>
+                <a href="https://www.treeos.top/OtherPPTOS/aquaOS/aquaOS.html" class="enter-btn" id="aquaBtn">
+                    <i class="fas fa-external-link-alt"></i> 进入
+                </a>
+            </div>
+
+            <!-- 预留空卡片（敬请期待） -->
             <div class="empty-card">
                 <i class="fas fa-plus-circle"></i>
                 <span>更多PPTOS</span>
                 <span style="font-size:0.8rem; opacity:0.7;">敬请期待</span>
             </div>
-            <div class="empty-card">
-                <i class="fas fa-cube"></i>
-                <span>即将上线</span>
-            </div>
-            <!-- 可根据需要增加更多空卡片，目前两个预留位足够示意 -->
         </div>
 
-        <!-- 页脚（完全保留原署名） -->
+        <!-- 页脚 -->
         <footer class="fade-in">
             <p>本页面及内容仅供学习和演示使用，deepseek生成</p>
             <div class="copyright">
@@ -293,7 +301,7 @@
     </div>
 
     <script>
-        // 按钮点击反馈 + 跳转（保留简洁动画）
+        // WaveOS 按钮跳转
         document.getElementById('waveBtn')?.addEventListener('click', function(e) {
             e.preventDefault();
             const original = this.innerHTML;
@@ -302,6 +310,18 @@
             this.style.background = '#004a99';
             setTimeout(() => {
                 window.location.href = "https://www.treeos.top/OtherPPTOS/waveOS/waveOS.html";
+            }, 800);
+        });
+
+        // AquaOS 按钮跳转（新增）
+        document.getElementById('aquaBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const original = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 跳转中';
+            this.style.pointerEvents = 'none';
+            this.style.background = '#004a99';
+            setTimeout(() => {
+                window.location.href = "https://www.treeos.top/OtherPPTOS/aquaOS/aquaOS.html";
             }, 800);
         });
 
