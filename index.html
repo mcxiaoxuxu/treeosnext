@@ -274,6 +274,42 @@
             text-shadow: 0 0 5px #0077ff;
         }
 
+        /* ===== 新增：更多OS推荐框 ===== */
+        .more-os-box {
+            text-align: center;
+            margin-top: 35px;
+            padding: 18px 25px;
+            background: rgba(0, 60, 100, 0.25);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 50px;
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,160,255,0.1);
+            transition: all 0.3s;
+            display: block;
+            text-decoration: none;
+            color: #cce7ff;
+            font-size: 1.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+        }
+        .more-os-box i {
+            margin-left: 8px;
+            color: #6ec8ff;
+            text-shadow: 0 0 8px #0099ff;
+            transition: transform 0.2s;
+        }
+        .more-os-box:hover {
+            background: rgba(0, 90, 140, 0.4);
+            border-color: #00e0ff;
+            box-shadow: 0 0 25px #0077ff, inset 0 0 30px rgba(0,200,255,0.2);
+            color: white;
+            transform: translateY(-3px);
+        }
+        .more-os-box:hover i {
+            transform: translateX(5px);
+        }
+
         /* ===== footer ===== */
         footer {
             text-align: center;
@@ -336,79 +372,84 @@
         .delay-2 { animation-delay: 0.3s; }
         .delay-3 { animation-delay: 0.45s; }
 
-        /* ===== 移动端优化：尺寸整体缩减5-15px，电脑端样式完全不变 ===== */
+        /* ===== 移动端优化：尺寸整体缩减5-15px ===== */
         @media (max-width: 768px) {
             .container {
-                padding: 12px;  /* 原15px，减小3px */
+                padding: 12px;
             }
 
             .logo {
-                width: 115px;   /* 原130px，减小15px */
+                width: 115px;
                 height: 115px;
                 margin-bottom: 20px;
             }
             .logo i {
-                font-size: 54px; /* 原64px，减小10px */
+                font-size: 54px;
             }
 
             h1 {
-                font-size: 2.0rem; /* 原2.2rem，减小0.2rem ≈ 3px */
+                font-size: 2.0rem;
                 margin-bottom: 6px;
             }
 
             .subtitle {
-                font-size: 1.2rem; /* 原1.4rem，减小0.2rem */
+                font-size: 1.2rem;
             }
 
             .content {
-                padding: 25px 15px; /* 原30px 20px，减小5px */
+                padding: 25px 15px;
                 border-radius: 22px;
             }
 
             .description h2 {
-                font-size: 1.7rem; /* 原1.9rem，减小0.2rem */
+                font-size: 1.7rem;
                 padding-left: 14px;
                 border-left-width: 5px;
             }
             .description h2 i {
                 margin-right: 10px;
-                font-size: 1.6rem; /* 图标等比例缩小 */
+                font-size: 1.6rem;
             }
 
             .description p {
-                font-size: 1.0rem; /* 原1.15rem，减小0.15rem */
+                font-size: 1.0rem;
                 margin-bottom: 14px;
             }
 
             .download-btn {
-                padding: 14px 30px; /* 原16px 35px，减小2-5px */
-                font-size: 1.1rem;   /* 原1.2rem，减小0.1rem */
+                padding: 14px 30px;
+                font-size: 1.1rem;
                 border-radius: 50px;
             }
 
             .file-info {
-                padding: 14px;      /* 原18px，减小4px */
-                font-size: 0.9rem;  /* 原0.98rem，减小0.08rem */
+                padding: 14px;
+                font-size: 0.9rem;
                 margin-top: 25px;
             }
             .file-info p {
                 margin: 4px 0;
             }
 
+            .more-os-box {
+                margin-top: 25px;
+                padding: 14px 20px;
+                font-size: 1.0rem;
+            }
+
             footer {
                 padding: 25px 0 15px;
             }
             .copyright {
-                font-size: 0.85rem; /* 原0.9rem，减小0.05rem */
+                font-size: 0.85rem;
                 margin-top: 15px;
             }
             .icon-attribution {
-                font-size: 0.75rem; /* 原0.8rem，减小0.05rem */
+                font-size: 0.75rem;
                 margin-top: 10px;
             }
         }
 
-        /* 针对更小屏（如iPhone SE）可选进一步微调，已包含在768px内 */
         @media (max-width: 480px) {
             .logo {
                 width: 105px;
@@ -422,6 +463,10 @@
             }
             .subtitle {
                 font-size: 1.1rem;
+            }
+            .more-os-box {
+                font-size: 0.95rem;
+                padding: 12px 16px;
             }
         }
     </style>
@@ -453,6 +498,11 @@
                         <p><i class="fas fa-clock"></i> 最后更新: 2026年2月8日</p>
                     </div>
                 </div>
+
+                <!-- 新增：更多OS推荐框，点击跳转至指定页面 -->
+                <a href="https://www.treeos.top/OtherPPTOS/Other.html" class="more-os-box">
+                    <i class="fas fa-cubes"></i> 更多OS推荐 <i class="fas fa-arrow-right"></i>
+                </a>
             </section>
         </main>
         
