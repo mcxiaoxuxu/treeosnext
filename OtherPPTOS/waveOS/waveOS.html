@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>其他PPTOS推荐</title>
+    <title>其他PPTOS推荐 · WaveOS | 移动优化版</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* ========= 深蓝科技 · 毛玻璃网格 ========= */
@@ -50,13 +50,49 @@
             backdrop-filter: blur(1.5px);
         }
 
-        /* ===== 头部 ===== */
+        /* ===== 头部（添加相对定位，用于返回按钮绝对定位） ===== */
         header {
+            position: relative;
             text-align: center;
             margin-bottom: 40px;
             padding-bottom: 25px;
             border-bottom: 1px solid rgba(0, 180, 255, 0.3);
             box-shadow: 0 10px 20px -12px rgba(0, 160, 255, 0.3);
+        }
+
+        /* ----- 返回按钮：科技蓝毛玻璃，左上角固定 ----- */
+        .back-btn {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: rgba(10, 25, 45, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 40px;
+            border: 1px solid rgba(0, 200, 255, 0.3);
+            color: #ccebff;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.25s;
+            z-index: 20;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .back-btn i {
+            font-size: 1rem;
+            color: #9fd6ff;
+            text-shadow: 0 0 8px #0099ff;
+        }
+        .back-btn:hover {
+            background: rgba(0, 80, 130, 0.9);
+            border-color: #00e0ff;
+            box-shadow: 0 0 20px #0077ff;
+            color: white;
         }
 
         .logo {
@@ -274,10 +310,22 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* ========= 响应式优化 · 移动端适配 (全面缩小组件尺寸) ========= */
+        /* ========= 响应式优化 · 移动端适配 ========= */
         @media (max-width: 650px) {
             .container {
                 padding: 8px;
+            }
+
+            /* 返回按钮移动端缩小 */
+            .back-btn {
+                left: 12px;
+                top: 12px;
+                padding: 7px 15px;
+                font-size: 0.9rem;
+                gap: 6px;
+            }
+            .back-btn i {
+                font-size: 0.9rem;
             }
             
             .logo {
@@ -310,7 +358,7 @@
             }
             
             .os-card {
-                max-width: 100%;        /* 手机端卡片满宽 */
+                max-width: 100%;
                 padding: 18px 16px 20px;
             }
             
@@ -352,6 +400,12 @@
 
         /* 更小屏幕（如 iPhone SE 等）进一步微调 */
         @media (max-width: 380px) {
+            .back-btn {
+                left: 8px;
+                top: 8px;
+                padding: 6px 12px;
+                font-size: 0.85rem;
+            }
             h1 {
                 font-size: 1.7rem;
             }
@@ -371,8 +425,12 @@
 </head>
 <body>
     <div class="container">
-        <!-- 头部 -->
+        <!-- 头部（含返回按钮） -->
         <header class="fade-in">
+            <!-- 左上角返回按钮，链接至指定页面 -->
+            <a href="https://www.treeos.top/OtherPPTOS/Other.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i> 返回
+            </a>
             <div class="logo">
                 <i class="fas fa-water"></i>
             </div>
@@ -386,7 +444,7 @@
                     <!-- WaveOS 卡片：宣传图直接引用 "1image" -->
                     <div class="os-card">
                         <div class="card-img">
-                            <img src="1image.png" alt="WaveOS 宣传图">
+                            <img src="1image" alt="WaveOS 宣传图">
                         </div>
                         <div class="card-title">
                             <i class="fas fa-water"></i> WaveOS
@@ -439,5 +497,4 @@
         });
     </script>
 </body>
-
 </html>
