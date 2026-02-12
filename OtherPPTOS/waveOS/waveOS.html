@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>其他PPTOS推荐 · WaveOS | 移动优化版</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ========= 深蓝科技 · 毛玻璃网格 ========= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        }
+
+        body {
+            background: #0a0e1a;
+            background-image: 
+                linear-gradient(rgba(0, 200, 255, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 200, 255, 0.04) 1px, transparent 1px),
+                radial-gradient(circle at 10% 20%, rgba(0, 150, 255, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 90% 75%, rgba(0, 180, 240, 0.1) 0%, transparent 50%);
+            background-size: 32px 32px, 32px 32px, 100% 100%, 100% 100%;
+            color: #e2f3ff;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 24px;
+            position: relative;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at 60% 40%, rgba(0, 130, 220, 0.08) 0%, transparent 65%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 5;
+            backdrop-filter: blur(1.5px);
+        }
+
+        /* ===== 头部 ===== */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0, 180, 255, 0.3);
+            box-shadow: 0 10px 20px -12px rgba(0, 160, 255, 0.3);
+        }
+
+        .logo {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 20px;
+            background: linear-gradient(145deg, #0e5a9e, #003863);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 0 0 4px rgba(0, 180, 255, 0.2),
+                0 12px 30px rgba(0, 100, 210, 0.5),
+                inset 0 -3px 8px rgba(0,0,0,0.3),
+                inset 0 3px 8px rgba(255,255,255,0.2);
+        }
+
+        .logo i {
+            font-size: 46px;
+            color: white;
+            text-shadow: 0 0 20px #00c0ff, 0 0 40px #0077ff;
+        }
+
+        h1 {
+            color: #b0eaff;
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+            letter-spacing: 3px;
+            text-shadow: 0 0 15px #0077cc, 0 0 30px #004c99;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #95d5ff;
+            font-size: 1.1rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            text-shadow: 0 0 12px #0066aa;
+        }
+
+        /* ===== 主面板 ===== */
+        .content {
+            background: rgba(6, 18, 34, 0.6);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 32px;
+            padding: 40px 30px;
+            box-shadow: 
+                0 20px 40px -10px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(0, 210, 255, 0.15) inset;
+            border: 1px solid rgba(30, 170, 255, 0.25);
+            margin-bottom: 45px;
+        }
+
+        /* 卡片网格 — 预留多OS位 */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* ===== WaveOS 简洁卡片 ===== */
+        .os-card {
+            background: rgba(10, 25, 45, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 22px 20px 26px;
+            border: 1px solid rgba(0, 200, 255, 0.2);
+            box-shadow: 0 12px 22px -8px rgba(0,0,0,0.5);
+            transition: all 0.25s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 300px;
+            justify-self: center;
+            width: 100%;
+        }
+
+        .os-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 220, 255, 0.6);
+            box-shadow: 0 20px 35px -12px #0066cc, 0 0 0 1px rgba(0,210,255,0.3) inset;
+            background: rgba(12, 40, 65, 0.8);
+        }
+
+        /* 宣传图片容器 */
+        .card-img {
+            width: 100%;
+            aspect-ratio: 1.4 / 1;
+            border-radius: 18px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(0, 230, 255, 0.5);
+            box-shadow: inset 0 -8px 20px rgba(0,0,0,0.5), 0 0 25px #0080ff;
+            overflow: hidden;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 650;
+            color: #d4f4ff;
+            text-shadow: 0 0 12px #0088ff;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .card-title i {
+            font-size: 1.6rem;
+            color: #6ec8ff;
+            filter: drop-shadow(0 0 10px cyan);
+        }
+
+        /* 了解更多按钮 */
+        .learn-btn {
+            background: transparent;
+            border: 1.8px solid #3fa5ff;
+            color: #ccebff;
+            padding: 12px 24px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 0.2s;
+            text-decoration: none;
+            backdrop-filter: blur(8px);
+            letter-spacing: 2px;
+            width: 100%;
+            margin-top: 12px;
+        }
+        .learn-btn i {
+            color: #9fd6ff;
+        }
+        .learn-btn:hover {
+            background: #004a99;
+            border-color: #00e0ff;
+            box-shadow: 0 0 25px #0077ff;
+            color: white;
+        }
+
+        /* 更多OS提示 */
+        .more-hint {
+            text-align: center;
+            margin-top: 45px;
+            color: #8fcbff;
+            border-top: 1px dashed #2f9eff;
+            padding-top: 30px;
+            font-size: 1rem;
+            letter-spacing: 3px;
+        }
+        .more-hint i {
+            margin: 0 8px;
+        }
+
+        /* ===== 页脚 ===== */
+        footer {
+            text-align: center;
+            padding: 30px 0 15px;
+            border-top: 1px solid rgba(0, 191, 255, 0.2);
+            color: #b0d4f0;
+            backdrop-filter: blur(8px);
+            margin-top: 20px;
+        }
+
+        .copyright {
+            margin-top: 18px;
+            font-size: 0.9rem;
+            color: #aacce6;
+        }
+
+        .deepseek-credit {
+            color: #a0d0ff;
+            font-weight: 700;
+            text-shadow: 0 0 6px #006bb3;
+        }
+
+        .icon-attribution {
+            font-size: 0.8rem;
+            margin-top: 14px;
+            color: #9ec0dd;
+        }
+
+        .icon-attribution a {
+            color: #99d0ff;
+            text-decoration: none;
+            border-bottom: 1px dotted #3399ff;
+            transition: 0.2s;
+        }
+        .icon-attribution a:hover {
+            color: #d4f0ff;
+            border-bottom-color: #00c8ff;
+            text-shadow: 0 0 8px #00b3ff;
+        }
+
+        /* 淡入动画 */
+        .fade-in {
+            animation: fadeIn 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
+        }
+        .delay-1 { animation-delay: 0.1s; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ========= 响应式优化 · 移动端适配 (全面缩小组件尺寸) ========= */
+        @media (max-width: 650px) {
+            .container {
+                padding: 8px;
+            }
+            
+            .logo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 16px;
+            }
+            .logo i {
+                font-size: 36px;
+            }
+            
+            h1 {
+                font-size: 1.9rem;
+                letter-spacing: 2px;
+                margin-bottom: 4px;
+            }
+            
+            .subtitle {
+                font-size: 0.95rem;
+                letter-spacing: 3px;
+            }
+            
+            .content {
+                padding: 25px 16px;
+                border-radius: 24px;
+            }
+            
+            .card-grid {
+                gap: 20px;
+            }
+            
+            .os-card {
+                max-width: 100%;        /* 手机端卡片满宽 */
+                padding: 18px 16px 20px;
+            }
+            
+            .card-img {
+                margin-bottom: 16px;
+            }
+            
+            .card-title {
+                font-size: 1.5rem;
+                gap: 6px;
+            }
+            .card-title i {
+                font-size: 1.3rem;
+            }
+            
+            .learn-btn {
+                padding: 10px 18px;
+                font-size: 0.98rem;
+                letter-spacing: 1.5px;
+                border-width: 1.6px;
+            }
+            
+            .more-hint {
+                margin-top: 35px;
+                padding-top: 22px;
+                font-size: 0.9rem;
+            }
+            
+            footer {
+                padding: 20px 0 12px;
+            }
+            .copyright {
+                font-size: 0.8rem;
+            }
+            .icon-attribution {
+                font-size: 0.7rem;
+            }
+        }
+
+        /* 更小屏幕（如 iPhone SE 等）进一步微调 */
+        @media (max-width: 380px) {
+            h1 {
+                font-size: 1.7rem;
+            }
+            .subtitle {
+                font-size: 0.85rem;
+                letter-spacing: 2px;
+            }
+            .card-title {
+                font-size: 1.4rem;
+            }
+            .learn-btn {
+                padding: 8px 14px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="fade-in">
+            <div class="logo">
+                <i class="fas fa-water"></i>
+            </div>
+            <h1>其他PPTOS推荐</h1>
+            <p class="subtitle">WAVE · FIRST</p>
+        </header>
+
+        <main>
+            <section class="content fade-in delay-1">
+                <div class="card-grid">
+                    <!-- WaveOS 卡片：宣传图直接引用 "1image" -->
+                    <div class="os-card">
+                        <div class="card-img">
+                            <img src="1image" alt="WaveOS 宣传图">
+                        </div>
+                        <div class="card-title">
+                            <i class="fas fa-water"></i> WaveOS
+                        </div>
+                        <a href="https://intereco.org.cn/d/278" class="learn-btn" id="learnMoreBtn">
+                            <i class="fas fa-info-circle"></i> 了解更多
+                        </a>
+                    </div>
+                    <!-- 预留更多OS卡片位 -->
+                </div>
+
+                <div class="more-hint">
+                    <i class="fas fa-cube"></i>  更多PPTM系统 · 敬请期待  <i class="fas fa-cube"></i>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="fade-in">
+            <p>本页面及内容仅供学习和演示使用，deepseek生成</p>
+            <div class="copyright">
+                <p><span class="deepseek-credit">此网页由deepseek编写</span> • 如有侵权请联系删除 • © 2025 我的世界小徐徐</p>
+                <p class="icon-attribution">
+                    图标由 <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> 提供，使用遵循其许可协议
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 按钮点击：动画 + 跳转（已适配移动）
+        document.getElementById('learnMoreBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const original = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 载入中...';
+            this.style.pointerEvents = 'none';
+            this.style.background = '#003f7f';
+            setTimeout(() => {
+                window.location.href = "https://intereco.org.cn/d/278";
+            }, 1200);
+        });
+
+        // 淡入初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeEls = document.querySelectorAll('.fade-in');
+            fadeEls.forEach(el => el.style.opacity = '0');
+            setTimeout(() => {
+                fadeEls.forEach(el => el.style.opacity = '1');
+            }, 80);
+        });
+    </script>
+</body>
+</html>
