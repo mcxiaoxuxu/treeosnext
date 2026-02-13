@@ -246,13 +246,13 @@
 </head>
 <body>
     <div class="container">
-        <!-- 极简头部 — 标题已修正为 PPTOS · 转换中心 -->
+        <!-- 极简头部 -->
         <header class="fade-in">
             <div class="site-title">PPTOS · 转换中心</div>
             <div class="site-sub">SELECT YOUR PPT OS</div>
         </header>
 
-        <!-- 卡片网格：WaveOS 3 + AquaOS Beta1.0.125 + 预留空位 -->
+        <!-- 卡片网格：WaveOS 3 + AquaOS Beta1.0.125 + XyangOS 1.0.0 + 预留空位 -->
         <div class="os-grid fade-in">
             <!-- WaveOS 3 卡片 -->
             <div class="os-card">
@@ -267,7 +267,7 @@
                 </a>
             </div>
 
-            <!-- AquaOS Beta1.0.125 卡片 — 链接已更新为 https://oceanStudio21st.github.io -->
+            <!-- AquaOS Beta1.0.125 卡片 -->
             <div class="os-card">
                 <div class="os-name">
                     <i class="fas fa-droplet"></i> AquaOS
@@ -276,6 +276,19 @@
                     <i class="fas fa-tag"></i> Beta1.0.125
                 </div>
                 <a href="https://oceanStudio21st.github.io" class="enter-btn" id="aquaBtn">
+                    <i class="fas fa-external-link-alt"></i> 进入
+                </a>
+            </div>
+
+            <!-- XyangOS 1.0.0 卡片（新增） -->
+            <div class="os-card">
+                <div class="os-name">
+                    <i class="fas fa-compass"></i> XyangOS
+                </div>
+                <div class="os-version">
+                    <i class="fas fa-tag"></i> 1.0.0
+                </div>
+                <a href="https://www.treeos.top/OtherPPTOS/xyangOS/xyangOS.html" class="enter-btn" id="xyangBtn">
                     <i class="fas fa-external-link-alt"></i> 进入
                 </a>
             </div>
@@ -313,6 +326,7 @@
             }, 800);
         });
 
+        // AquaOS 按钮跳转
         document.getElementById('aquaBtn')?.addEventListener('click', function(e) {
             e.preventDefault();
             const original = this.innerHTML;
@@ -321,6 +335,18 @@
             this.style.background = '#004a99';
             setTimeout(() => {
                 window.location.href = "https://oceanStudio21st.github.io";
+            }, 800);
+        });
+
+        // XyangOS 按钮跳转（新增）
+        document.getElementById('xyangBtn')?.addEventListener('click', function(e) {
+            e.preventDefault();
+            const original = this.innerHTML;
+            this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 跳转中';
+            this.style.pointerEvents = 'none';
+            this.style.background = '#004a99';
+            setTimeout(() => {
+                window.location.href = "https://www.treeos.top/OtherPPTOS/xyangOS/xyangOS.html";
             }, 800);
         });
 
