@@ -3,102 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreeOS NEXT - 开源声明</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <title>TreeOS NEXT · 开源声明</title>
+    <!-- 使用 Inter 字体，更现代 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f0f9f0; /* 浅绿色背景 */
-            color: #2c3e2c; /* 深绿色文字 */
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f9fafc;
+            color: #1a1f2e;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 导航栏 — 极简半透明 */
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
-            background-color: #4caf50; /* 亮绿色 */
-            border-bottom: 1px solid #66bb6a; /* 更亮绿色边框 */
-            color: white;
+            padding: 18px 32px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
+
+        .navbar-title {
             font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            font-size: 1.2rem;
+            letter-spacing: -0.01em;
+            background: linear-gradient(135deg, #2d3e50, #1b2a3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
+        .navbar a {
+            color: #2d3e50;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 18px;
+            border-radius: 40px;
+            background: rgba(45, 62, 80, 0.05);
+            transition: all 0.2s;
+            border: 1px solid transparent;
+        }
+
         .navbar a:hover {
-            background-color: #66bb6a; /* 悬停背景色 */
+            background: rgba(45, 62, 80, 0.1);
+            border-color: rgba(45, 62, 80, 0.15);
         }
+
+        /* 主容器 */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 24px;
+            flex: 1;
+        }
+
+        /* 标题区域 */
         .hero-section {
             text-align: center;
-            padding: 40px 20px;
-            margin: 20px;
+            margin-bottom: 48px;
         }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            background: linear-gradient(145deg, #1e2b39, #2d4b65);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+
+        .hero-section p {
+            font-size: 1.1rem;
+            color: #4a5568;
+            max-width: 600px;
+            margin: 0 auto;
+            border-bottom: 2px solid #eaeef2;
+            padding-bottom: 24px;
+        }
+
+        /* 表格卡片 */
         .table-container {
-            margin: 30px auto;
-            max-width: 800px;
-            overflow-x: auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15), 0 4px 18px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s;
         }
+
+        .table-container:hover {
+            box-shadow: 0 25px 45px -12px rgba(0, 40, 60, 0.2);
+        }
+
         .open-source-table {
             width: 100%;
             border-collapse: collapse;
-            background-color: white;
-            box-shadow: 0 4px 20px rgba(76, 175, 80, 0.15); /* 绿色阴影 */
-            border: 1px solid #c8e6c9; /* 浅绿色边框 */
-            border-radius: 8px;
-            overflow: hidden;
+            font-size: 0.98rem;
         }
-        .open-source-table th,
-        .open-source-table td {
-            padding: 15px 20px;
-            text-align: left;
-            border-bottom: 1px solid #e8f5e9; /* 更浅绿色分隔线 */
-        }
+
         .open-source-table th {
-            background-color: #e8f5e9; /* 浅绿色表头 */
+            background-color: #f8fafd;
+            color: #1e2b39;
             font-weight: 600;
-            color: #2e7d32; /* 深绿色表头文字 */
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 20px 24px;
+            border-bottom: 2px solid #dde7f0;
+            text-align: left;
         }
-        .open-source-table tr:hover {
-            background-color: #f1f8e9; /* 悬停时浅绿色背景 */
+
+        .open-source-table td {
+            padding: 20px 24px;
+            border-bottom: 1px solid #edf2f7;
+            color: #2d3f53;
         }
+
+        .open-source-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .open-source-table tbody tr:hover {
+            background-color: #f5f9ff;
+        }
+
+        /* 表格内特殊样式（图标库说明） */
+        .open-source-table td:nth-child(2) {
+            color: #3d5a73;
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
         .footer {
             text-align: center;
-            padding: 25px;
-            background-color: #4caf50; /* 亮绿色背景 */
-            color: white; /* 白色文字 */
+            padding: 30px 24px;
+            background: #ffffff;
+            border-top: 1px solid #e9eef2;
+            color: #5b6876;
+            font-size: 0.9rem;
             margin-top: 60px;
-            font-size: 14px;
+            letter-spacing: 0.3px;
         }
-        h1 {
-            color: #2e7d32; /* 深绿色标题 */
-            margin-bottom: 15px;
+
+        .footer p {
+            margin: 4px 0;
         }
-        p {
-            color: #4caf50; /* 亮绿色正文 */
-            margin-bottom: 30px;
-            font-size: 16px;
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            .navbar {
+                padding: 14px 20px;
+            }
+            .navbar-title {
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .open-source-table th,
+            .open-source-table td {
+                padding: 16px 18px;
+            }
         }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .navbar-title {
-            font-size: 18px;
-            font-weight: 600;
+
+        /* 细微装饰 */
+        .badge {
+            display: inline-block;
+            background: #eef4ff;
+            color: #2d4b65;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-weight: 500;
+            margin-left: 8px;
         }
     </style>
 </head>
 <body>
 
     <div class="navbar">
-        <div class="navbar-title">TreeOS NEXT 开源项目</div>
+        <div class="navbar-title">TreeOS NEXT · 开源</div>
         <div>
             <a href="https://www.mcxuxu.top/">首页</a>
         </div>
@@ -106,39 +208,44 @@
 
     <div class="container">
         <div class="hero-section">
-            <h1>TreeOS NEXT - 开源声明</h1>
-            <p>本页面列出了项目中使用的开源资源及其许可信息。</p>
-            <div class="table-container">
-                <table class="open-source-table">
-                    <thead>
-                        <tr>
-                            <th>名称</th>
-                            <th>许可证</th>
-                            <th>是否修改</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>TreeOS NEXT</td>
-                            <td>CC BY-NC-SA 4.0</td>
-                            <td>否</td>
-                        </tr>
-                        <tr>
-                            <td>图标库</td>
-                            <td>从界面生态QQ群获取，不清楚许可证，包含多种图标</td>
-                            <td>否</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h1>开源声明</h1>
+            <p>TreeOS NEXT 3预览版已出炉</p>
+        </div>
+
+        <div class="table-container">
+            <table class="open-source-table">
+                <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>许可证</th>
+                        <th>是否修改</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>TreeOS NEXT 3</td>
+                        <td>CC BY-NC-SA 4.0</td>
+                        <td><span class="badge">否</span></td>
+                    </tr>
+                    <tr>
+                        <td>图标库 · 界面生态QQ群</td>
+                        <td>从界面生态QQ群获取，不清楚许可证，包含多种图标</td>
+                        <td><span class="badge">否</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 可添加一条致谢信息，增加人文感 -->
+        <div style="margin-top: 30px; text-align: right; color: #7f8b99; font-size: 0.85rem; border-top: 1px dashed #dce5ec; padding-top: 20px;">
+             如有任何疑问，请通过邮箱 treeosnext@163.com我们。
         </div>
     </div>
 
     <div class="footer">
-        Copyright © 2025 - 2026 我的世界小徐徐 版权所有 | 版本：v1.5
+        <p>Copyright © 2025 - 2026 我的世界小徐徐 版权所有，DeepSeek辅助生成</p>
+        <p style="margin-top: 6px; opacity: 0.7;">版本 v3</p>
     </div>
 
 </body>
-
 </html>
-
