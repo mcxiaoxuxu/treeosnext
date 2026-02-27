@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hello Studio招募</title>
     <style>
-        /* 保留极简骨架，主题色改为蓝色 */
         * {
             margin: 0;
             padding: 0;
@@ -13,153 +12,175 @@
         }
 
         body {
-            background: #f5f8fa;              /* 冷白底，适合蓝色主题 */
+            background: #e3effa;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.5;
-            color: #1e1e1e;
+            color: #1e2b3a;
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 2rem 1.5rem;
+            padding: 2rem;
         }
 
         .container {
-            max-width: 800px;                  /* 容器宽度增大，适应大图 */
+            max-width: 1100px;
             width: 100%;
-            background: #ffffff;                /* 白色卡片，略微浮起 */
-            border-radius: 32px;
-            padding: 3rem 3rem;                 /* 内边距增大 */
-            box-shadow: 0 15px 30px -10px rgba(0, 60, 90, 0.1); /* 蓝色调阴影 */
-            border: 1px solid #d9e2e8;          /* 冷灰边框 */
+            background: white;
+            border-radius: 40px;
+            padding: 3rem;
+            box-shadow: 0 30px 45px -20px #1e4f8a;
+            border: 1px solid #c2d9f0;
         }
 
-        /* 宣传语：主题色改为蓝色 */
-        .statement {
-            font-size: 2.2rem;                  /* 稍微增大 */
-            font-weight: 420;
-            letter-spacing: -0.01em;
-            margin-bottom: 0.8rem;               /* 减小底部间距，给宣传文字留空间 */
-            color: #1e2a2f;
-            border-left: 5px solid #2a6bda;      /* 蓝色竖线 */
-            padding-left: 1.2rem;
-            line-height: 1.3;
+        .title {
+            font-size: 2.6rem;
+            font-weight: 500;
+            color: #0a2647;
+            border-left: 6px solid #1e6df2;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .statement small {
-            font-size: 1.1rem;
-            color: #5f7a9e;                      /* 淡蓝色 */
-            font-weight: 350;
+        .title small {
+            font-size: 1.3rem;
+            color: #2f6e9e;
+            font-weight: 400;
             display: block;
             margin-top: 0.3rem;
         }
 
-        /* 新增：主标题下方的宣传文字 */
-        .promo-text {
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            margin: 2rem 0 2.5rem;
+            align-items: center;
+        }
+
+        .left {
+            flex: 1 1 300px;
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: #1f4973;
+            line-height: 1.7;
+            background: #e5f0ff;
+            padding: 2rem;
+            border-radius: 30px;
+            border-left: 4px solid #3680e6;
+            margin-bottom: 2rem;
+        }
+
+        .note {
+            background: #d4e6ff;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            color: #0f3b73;
+            font-weight: 500;
             font-size: 1.2rem;
-            color: #3a5670;                       /* 深蓝色文字 */
-            margin: 0 0 2rem 1.8rem;               /* 左对齐，与标题竖线对齐 */
-            padding-left: 0.5rem;
-            line-height: 1.6;
-            max-width: 600px;
-            font-weight: 350;
-            border-bottom: 1px solid #d0e0eb;      /* 非常淡的蓝色分割线 */
-            padding-bottom: 1.2rem;
+            border: 1px solid #9bc0ed;
         }
 
-        /* 招募图区域：蓝色调细节 */
-        .recruit-figure {
-            margin: 2.5rem 0 3rem 0;
+        .note span {
+            background: #1e6df2;
+            color: white;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+            margin-left: 0.8rem;
+        }
+
+        .right {
+            flex: 1.2 1 450px;
+        }
+
+        .image-box {
             width: 100%;
-            background: #f0f5fc;                  /* 极浅的蓝色底 */
-            border-radius: 28px;                   /* 圆角稍微增大 */
-            padding: 2rem;                          /* 内边距增大，让图更大 */
-            border: 1px solid #c9ddec;              /* 浅蓝边框 */
+            background: #d4e6ff;
+            border-radius: 36px;
+            padding: 2rem;
+            border: 2px solid #9ac2f0;
         }
 
-        .recruit-figure img {
+        .image-box img {
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 20px;                   /* 图片圆角增大 */
-            background: #ffffff;
-            border: 1px solid #b8cbd9;
-            box-shadow: 0 8px 18px -8px rgba(30, 90, 150, 0.2); /* 蓝色阴影 */
+            border-radius: 28px;
+            border: 2px solid white;
+            box-shadow: 0 15px 30px -12px #0a3e6b;
         }
 
         .image-label {
-            text-align: right;
-            font-size: 0.9rem;                      /* 稍微增大 */
-            color: #4a6f8c;                         /* 蓝色文字 */
-            margin-top: 0.8rem;
-            font-family: monospace;
-            font-weight: 400;
-            letter-spacing: 0.3px;
+            text-align: center;
+            font-size: 1rem;
+            color: #1b5a9c;
+            margin-top: 1rem;
+            background: #ecf5ff;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+            border: 1px solid #a7c8f2;
         }
 
-        /* 页尾：蓝色调细节 */
         .footer {
             margin-top: 2.5rem;
-            padding-top: 1.5rem;
-            border-top: 1px dashed #c0d2e0;         /* 蓝色虚线 */
-            font-size: 0.9rem;                       /* 稍微增大 */
-            color: #5f6f7c;
+            padding: 1.5rem 2rem;
+            background: #e5f0ff;
+            border-radius: 60px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 1rem;
+            color: #2b4b73;
+            border: 1px solid #c2d6e8;
         }
 
         .footer a {
-            color: #2a6bda;                          /* 蓝色链接 */
+            color: #1e6df2;
             text-decoration: none;
-            border-bottom: 1px dotted #9bb5d1;
+            border-bottom: 1px solid #a7c8f2;
         }
 
         .footer a:hover {
-            color: #1a4b9a;
-            border-bottom-color: #1a4b9a;
-        }
-
-        /* 装饰小点也改为蓝色调 */
-        .decor {
-            width: 60px;                             /* 稍微增大 */
-            height: 4px;
-            background: #b2cce0;                      /* 淡蓝色 */
-            margin: 1rem 0 0 auto;
-            border-radius: 4px;
+            color: #0a3b7a;
+            border-bottom-color: #0a3b7a;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 宣传语：加了颜色和一小行副文本 -->
-        <div class="statement">
+        <div class="title">
             Hello Studio招募
-            <small>⎯ 平面 / 开发 / 设计 ⎯</small>
+            <small>平面 开发 设计</small>
         </div>
 
-        <!-- 新增：主标题下方的宣传文字 -->
-        <div class="promo-text">
-            我们是一个年轻的设计/开发工作室，成立于2026年2月23日，正在寻找一起做有趣项目的伙伴。<br>
-            无论你是老手还是新手，只要对创意有热情，都欢迎加入。
+        <div class="content">
+            <div class="left">
+                <div class="description">
+                    我们是一个年轻的设计/开发工作室，成立于2026年2月23日，正在寻找一起做有趣项目的伙伴。<br><br>
+                    无论你是老手还是新手，只要对创意有热情，都欢迎加入。
+                </div>
+                
+                <div class="note">
+                    加入须知 <span>无薪资 偶尔小奖金</span>
+                </div>
+            </div>
+
+            <div class="right">
+                <div class="image-box">
+                    <img src="1image.png" alt="工作室招募" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22580%22%20height%3D%22360%22%20viewBox%3D%220%200%20580%20360%22%3E%3Crect%20width%3D%22580%22%20height%3D%22360%22%20fill%3D%22%232163c7%22%2F%3E%3Ctext%20x%3D%22200%22%20y%3D%22190%22%20font-family%3D%22monospace%22%20font-size%3D%2232%22%20fill%3D%22%23ffffff%22%3E1image.png%3C%2Ftext%3E%3C%2Fsvg%3E';">
+                    <div class="image-label">1image.png 招募视觉</div>
+                </div>
+            </div>
         </div>
 
-        <!-- 招募图区域：暖色衬底，突出图片。图片名已改为 1image.png -->
-        <div class="recruit-figure">
-            <img src="1image.png" alt="工作室招募" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22700%22%20height%3D%22350%22%20viewBox%3D%220%200%20700%20350%22%3E%3Crect%20width%3D%22700%22%20height%3D%22350%22%20fill%3D%22%23e1f0fa%22%2F%3E%3Ctext%20x%3D%22250%22%20y%3D%22180%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%20fill%3D%22%233a6ea5%22%3E1image.png%3C%2Ftext%3E%3C%2Fsvg%3E';">
-            <div class="image-label">备注：加入无薪资，偶尔有小奖金</div>
-        </div>
-        
-        <!-- 一个不起眼的小装饰，增加层次（可忽略） -->
-        <div class="decor"></div>
-
-        <!-- 页尾：完全保留参考里的文字，但颜色略暖 -->
         <div class="footer">
-            <span>© Hello Studio</span>
-            <span>由 <a href="#">DeepSeek</a> 辅助编写 · 如有侵权请联系删除</span>
+            <span>Hello Studio</span>
+            <span>由 DeepSeek 辅助编写 如有侵权请联系删除</span>
         </div>
     </div>
 </body>
