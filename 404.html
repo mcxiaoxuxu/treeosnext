@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>哎呀，页面走丢了 - TreeOS NEXT</title>
+    <style>
+        /* 复用你 TreeOS NEXT 开源声明的简洁风格，保持品牌统一 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f9fafc;
+            color: #1a1f2e;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 50px 30px;
+            box-shadow: 0 20px 40px -12px rgba(0, 20, 30, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        h1 {
+            font-size: 6rem;
+            font-weight: 700;
+            background: linear-gradient(145deg, #1e2b39, #2d4b65);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #2d3f53;
+            margin-bottom: 20px;
+        }
+        p {
+            color: #4a5568;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .home-link {
+            display: inline-block;
+            background: #2d4b65;
+            color: white;
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .home-link:hover {
+            background: #1e2b39;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <!-- 这里是 404 页面的核心内容 -->
+        <h1>404</h1>
+        <h2>😵 哎呀，页面走丢了！</h2>
+        <p>您访问的页面可能已被移除、更名，或暂时不存在。</p>
+        <!-- 修改 href 里面的链接，换成你自己网站首页的地址 -->
+        <a href="https://www.treeos.top" class="home-link">🌳 返回 TreeOS 首页</a>
+    </div>
+</body>
+</html>
