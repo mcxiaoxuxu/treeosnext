@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TreeOS NEXT 3- PPSM下载</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TreeOS NEXT 3 - PPSM下载</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <style>
         * {
             margin: 0;
@@ -15,7 +15,7 @@
 
         body {
             background: #0a1120;
-            background-image: 
+            background-image:
                 linear-gradient(rgba(0, 180, 255, 0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(0, 180, 255, 0.05) 1px, transparent 1px),
                 radial-gradient(circle at 20% 30%, rgba(0, 140, 255, 0.15) 0%, transparent 40%),
@@ -68,11 +68,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 
+            box-shadow:
                 0 0 0 4px rgba(0, 160, 255, 0.2),
                 0 15px 30px rgba(0, 80, 200, 0.5),
-                inset 0 -2px 5px rgba(0,0,0,0.2),
-                inset 0 2px 5px rgba(255,255,255,0.3);
+                inset 0 -2px 5px rgba(0, 0, 0, 0.2),
+                inset 0 2px 5px rgba(255, 255, 255, 0.3);
             position: relative;
             transition: all 0.3s;
         }
@@ -108,7 +108,7 @@
             -webkit-backdrop-filter: blur(12px);
             border-radius: 28px;
             padding: 45px 40px;
-            box-shadow: 
+            box-shadow:
                 0 20px 35px -8px rgba(0, 0, 0, 0.7),
                 0 0 0 1px rgba(0, 200, 255, 0.15) inset,
                 0 0 25px rgba(0, 160, 250, 0.2);
@@ -142,7 +142,7 @@
             margin-bottom: 18px;
             font-size: 1.15rem;
             color: #cce7ff;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
             font-weight: 350;
             line-height: 1.7;
         }
@@ -162,7 +162,7 @@
             padding: 25px;
             border-radius: 18px;
             border-left: 6px solid #2a8cff;
-            box-shadow: 0 8px 16px -4px rgba(0,0,0,0.5), 0 0 0 1px rgba(64, 192, 255, 0.1);
+            box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(64, 192, 255, 0.1);
             transition: 0.2s;
         }
 
@@ -199,7 +199,7 @@
             border-radius: 60px;
             text-decoration: none;
             transition: all 0.25s ease;
-            box-shadow: 
+            box-shadow:
                 0 8px 0 #001e3c,
                 0 15px 30px rgba(0, 120, 255, 0.4),
                 0 0 20px #0080ff;
@@ -228,7 +228,7 @@
 
         .download-btn:hover {
             transform: translateY(-6px);
-            box-shadow: 
+            box-shadow:
                 0 6px 0 #001a33,
                 0 20px 40px rgba(0, 162, 255, 0.7),
                 0 0 35px #0099ff;
@@ -260,7 +260,7 @@
             width: auto;
             margin-left: auto;
             margin-right: auto;
-            box-shadow: inset 0 0 15px rgba(0,50,100,0.3);
+            box-shadow: inset 0 0 15px rgba(0, 50, 100, 0.3);
         }
 
         .file-info p {
@@ -274,7 +274,7 @@
             text-shadow: 0 0 5px #0077ff;
         }
 
-        /* ===== 新增：更多OS推荐框 ===== */
+        /* ===== 更多OS推荐框 ===== */
         .more-os-box {
             text-align: center;
             margin-top: 35px;
@@ -284,7 +284,7 @@
             -webkit-backdrop-filter: blur(8px);
             border-radius: 50px;
             border: 1px solid rgba(0, 200, 255, 0.3);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3), inset 0 0 20px rgba(0,160,255,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0, 160, 255, 0.1);
             transition: all 0.3s;
             display: block;
             text-decoration: none;
@@ -293,19 +293,22 @@
             font-weight: 500;
             letter-spacing: 2px;
         }
+
         .more-os-box i {
             margin-left: 8px;
             color: #6ec8ff;
             text-shadow: 0 0 8px #0099ff;
             transition: transform 0.2s;
         }
+
         .more-os-box:hover {
             background: rgba(0, 90, 140, 0.4);
             border-color: #00e0ff;
-            box-shadow: 0 0 25px #0077ff, inset 0 0 30px rgba(0,200,255,0.2);
+            box-shadow: 0 0 25px #0077ff, inset 0 0 30px rgba(0, 200, 255, 0.2);
             color: white;
             transform: translateY(-3px);
         }
+
         .more-os-box:hover i {
             transform: translateX(5px);
         }
@@ -353,26 +356,48 @@
 
         /* 动画 */
         @keyframes btnScan {
-            0% { left: -30%; opacity: 0; }
-            30% { opacity: 0.7; }
-            70% { opacity: 0.7; }
-            100% { left: 110%; opacity: 0; }
+            0% {
+                left: -30%;
+                opacity: 0;
+            }
+            30% {
+                opacity: 0.7;
+            }
+            70% {
+                opacity: 0.7;
+            }
+            100% {
+                left: 110%;
+                opacity: 0;
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
             animation: fadeIn 0.9s cubic-bezier(0.2, 0.9, 0.3, 1) forwards;
         }
 
-        .delay-1 { animation-delay: 0.15s; }
-        .delay-2 { animation-delay: 0.3s; }
-        .delay-3 { animation-delay: 0.45s; }
+        .delay-1 {
+            animation-delay: 0.15s;
+        }
+        .delay-2 {
+            animation-delay: 0.3s;
+        }
+        .delay-3 {
+            animation-delay: 0.45s;
+        }
 
-        /* ===== 移动端优化：尺寸整体缩减5-15px ===== */
+        /* ===== 移动端优化 ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 12px;
@@ -480,26 +505,28 @@
             <h1>TreeOS NEXT</h1>
             <p class="subtitle">PPTOS</p>
         </header>
-        
+
         <main>
             <section class="content fade-in delay-1">
                 <div class="description">
                     <h2><i class="fas fa-leaf"></i> 关于TreeOS NEXT 3正式版</h2>
                     <p>TreeOS NEXT 3是一款PPSM操作系统，本网页提供了TreeOS NEXT 3正式版的下载</p>
                 </div>
-                
+
                 <div class="download-section">
-                    <a href="https://1853838479.share.123pan.cn/123pan/rhsPvd-tYZ9?pwd=Tree#" class="download-btn" id="downloadBtn">
+                    <a href="https://1853838479.share.123pan.cn/123pan/rhsPvd-to0A?pwd=Tree#" class="download-btn" id="downloadBtn">
                         <i class="fas fa-external-link-alt"></i>TreeOS 下载
                     </a>
                     <div class="file-info">
-                        <p><i class="fas fa-file-powerpoint"></i> 文件格式: PPSM（Power Point）
-                <a href="https://www.treeos.top/OtherPPTOS" class="more-os-box">
-                    <i class="fas fa-cubes"></i> 更多OS推荐 <i class="fas fa-arrow-right"></i>
-                </a>
+                        <p><i class="fas fa-file-powerpoint"></i> 文件格式: PPSM（Power Point）</p>
+                    </div>
+                    <a href="https://www.treeos.top/OtherPPTOS" class="more-os-box">
+                        <i class="fas fa-cubes"></i> 更多OS推荐 <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
             </section>
         </main>
-        
+
         <footer class="fade-in delay-3">
             <p>本页面及内容仅供学习和演示使用，DeepSeek辅助编写</p>
             <div class="copyright">
@@ -514,18 +541,18 @@
     <script>
         document.getElementById('downloadBtn').addEventListener('click', function(e) {
             e.preventDefault();
-            
+
             const originalText = this.innerHTML;
             this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> 正在跳转...';
             this.style.pointerEvents = 'none';
-            
+
             setTimeout(() => {
                 this.innerHTML = '<i class="fas fa-external-link-alt"></i> 跳转中...';
                 this.style.background = 'linear-gradient(to right, #0a5fae, #003c8b)';
-                
+
                 setTimeout(() => {
-                    window.location.href = "https://1853838479.share.123pan.cn/123pan/rhsPvd-tYZ9?pwd=Tree#";
-                    
+                    window.location.href = 'https://1853838479.share.123pan.cn/123pan/rhsPvd-to0A?pwd=Tree#';
+
                     setTimeout(() => {
                         this.innerHTML = originalText;
                         this.style.pointerEvents = 'auto';
@@ -540,7 +567,7 @@
             fadeElements.forEach(el => {
                 el.style.opacity = '0';
             });
-            
+
             setTimeout(() => {
                 fadeElements.forEach(el => {
                     el.style.opacity = '1';
